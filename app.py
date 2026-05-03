@@ -12,12 +12,12 @@ st.markdown(
         font-size: 48px;
         font-weight: bold;
         color: #620462;
-        text-align: center;
+        text-align: left;
     }
     .subtitulo {
-        font-size: 24px;
+        font-size: 20px;
         color: #555;
-        text-align: center;
+        text-align: left;
     }
     .card {
         background: linear-gradient(135deg, #fdfbfb 0%, #fcdefe 100%);
@@ -46,24 +46,24 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-
 # Cargar imagen local
 image = Image.open("37 sin título.png")
 
-# Mostrar imagen junto al título
-st.markdown(
-    """
-    <div style="display:flex; align-items:center; justify-content:center; gap:15px;">
-        <h1 style="color:#620462;">Bienvenido a mi Portafolio</h1>
-        
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-st.markdown('<div class="subtitulo">Aquí encontrarás mis proyectos y actividades</div>', unsafe_allow_html=True)
-st.image(image, width=100)
+# 🔥 SECCIÓN HEADER (imagen + texto alineados)
+col1, col2 = st.columns([1, 4])
 
+with col1:
+    st.image(image, width=120)
 
+with col2:
+    st.markdown(
+        '<div class="titulo">Bienvenido a mi Portafolio</div>',
+        unsafe_allow_html=True
+    )
+    st.markdown(
+        '<div class="subtitulo">Aquí encontrarás mis proyectos y actividades</div>',
+        unsafe_allow_html=True
+    )
 
 st.write("---")
 
