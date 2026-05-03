@@ -4,7 +4,7 @@ from PIL import Image
 # Configuración de la página
 st.set_page_config(page_title="Mi Portafolio", layout="wide")
 
-# Estilos CSS
+# Estilos CSS para cards y títulos
 st.markdown(
     """
     <style>
@@ -13,10 +13,6 @@ st.markdown(
         font-weight: bold;
         color: #620462;
         text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 15px;
     }
     .subtitulo {
         font-size: 24px;
@@ -50,27 +46,23 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Cargar imagen local y convertirla a base64 para usarla en HTML
-import base64
-from io import BytesIO
 
+# Cargar imagen local
 image = Image.open("37 sin título.png")
-buffer = BytesIO()
-image.save(buffer, format="PNG")
-img_base64 = base64.b64encode(buffer.getvalue()).decode()
 
-# 🔹 Título con imagen al lado (funciona local y en la nube)
+# Mostrar imagen junto al título
 st.markdown(
-    f"""
-    <div class="titulo">
-        <img src="data:image/png;base64,{img_base64}" width="80" alt="logo">
-        Bienvenido a mi Portafolio
+    """
+    <div style="display:flex; align-items:center; justify-content:center; gap:15px;">
+        <h1 style="color:#620462;">Bienvenido a mi Portafolio</h1>
     </div>
     """,
     unsafe_allow_html=True
 )
+st.image(image, width=80)
 
 st.markdown('<div class="subtitulo">Aquí encontrarás mis proyectos y actividades</div>', unsafe_allow_html=True)
+
 st.write("---")
 
 # Lista de proyectos
@@ -79,7 +71,7 @@ proyectos = {
     "✨ Proyecto 2 - Control por voz inteligente": "https://ctrlvoice-controlxvoz-arp07.streamlit.app/",
     "🌟 Proyecto 3 - Tablero Inteligente": "https://drawrecode0111.streamlit.app/",
     "✨ Proyecto 4 - Reconocimiento de dígitos a mano": "https://gvg6qqomh6vofairthbflj.streamlit.app/",
-    "🌟 Proyecto 5 - Conversión texto-audio": "https://im-class6-labasequepasoelprofe.streamlit.app/",
+    "🌟 Proyecto 5 - Conversión texto-audio": "https://im-class6-labasequepasoelprofe.streamlit.app/",   
     "✨ Proyecto 6 - RAG ": "https://chatpdf-563hjncbbazkw2zpmjkwq8.streamlit.app/",
     "🌟 Proyecto 7 - Generador de Texto LSTM": "https://lstmnlp-kno59sekzgxzj4ss73dsec.streamlit.app/",
     "✨ Proyecto 8 - Lector de imágenes": "https://7j5f9mvnfz4wv4ybjrk6zb.streamlit.app/",
