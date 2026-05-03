@@ -38,7 +38,7 @@ st.markdown(
     .card a {
         text-decoration: none;
         font-weight: bold;
-        color: #007BFF;
+        color: #f7e0f8;
     }
     </style>
     """,
