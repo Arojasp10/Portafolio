@@ -19,7 +19,7 @@ st.markdown(
         text-align: center;
     }
     .card {
-        background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+        background: linear-gradient(135deg, #fdfbfb 0%, #fcdefe 100%);
         padding: 20px;
         border-radius: 15px;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -32,13 +32,13 @@ st.markdown(
         box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
     .card h3 {
-        color: #f7e0f8;
+        color: #620462;
         margin-bottom: 10px;
     }
     .card a {
         text-decoration: none;
         font-weight: bold;
-        color: #f7e0f8;
+        color: #007BFF;
     }
     </style>
     """,
