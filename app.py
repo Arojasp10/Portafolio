@@ -32,7 +32,7 @@ st.markdown(
         box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
     .card h3 {
-        color: #620462;
+        color: #f7e0f8;
         margin-bottom: 10px;
     }
     .card a {
