@@ -1,4 +1,5 @@
 import streamlit as st
+from PIL import Image
 
 # Configuración de la página
 st.set_page_config(page_title="Mi Portafolio", layout="wide")
@@ -16,11 +17,6 @@ st.markdown(
         align-items: center;
         justify-content: center;
         gap: 15px;
-    }
-    .titulo img {
-        width: 80px;
-        height: 80px;
-        border-radius: 10px;
     }
     .subtitulo {
         font-size: 24px;
@@ -54,11 +50,20 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# 🔹 Título con imagen local al lado
+# Cargar imagen local y convertirla a base64 para usarla en HTML
+import base64
+from io import BytesIO
+
+image = Image.open("37 sin título.png")
+buffer = BytesIO()
+image.save(buffer, format="PNG")
+img_base64 = base64.b64encode(buffer.getvalue()).decode()
+
+# 🔹 Título con imagen al lado (funciona local y en la nube)
 st.markdown(
-    """
+    f"""
     <div class="titulo">
-        <img src="37 sin título.png" alt="logo">
+        <img src="data:image/png;base64,{img_base64}" width="80" alt="logo">
         Bienvenido a mi Portafolio
     </div>
     """,
@@ -74,7 +79,7 @@ proyectos = {
     "✨ Proyecto 2 - Control por voz inteligente": "https://ctrlvoice-controlxvoz-arp07.streamlit.app/",
     "🌟 Proyecto 3 - Tablero Inteligente": "https://drawrecode0111.streamlit.app/",
     "✨ Proyecto 4 - Reconocimiento de dígitos a mano": "https://gvg6qqomh6vofairthbflj.streamlit.app/",
-    "🌟 Proyecto 5 - Conversión texto-audio": "https://im-class6-labasequepasoelprofe.streamlit.app/",   
+    "🌟 Proyecto 5 - Conversión texto-audio": "https://im-class6-labasequepasoelprofe.streamlit.app/",
     "✨ Proyecto 6 - RAG ": "https://chatpdf-563hjncbbazkw2zpmjkwq8.streamlit.app/",
     "🌟 Proyecto 7 - Generador de Texto LSTM": "https://lstmnlp-kno59sekzgxzj4ss73dsec.streamlit.app/",
     "✨ Proyecto 8 - Lector de imágenes": "https://7j5f9mvnfz4wv4ybjrk6zb.streamlit.app/",
