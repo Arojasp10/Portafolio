@@ -30,16 +30,16 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.markdown('<div class="titulo">👋 Bienvenido a mi Portafolio</div>', unsafe_allow_html=True)
+st.markdown('<div class="titulo"> Bienvenido a mi Portafolio</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitulo">Aquí encontrarás mis proyectos y actividades</div>', unsafe_allow_html=True)
 
 st.write("---")
 
 # Lista de proyectos
 proyectos = {
-    "📊 Proyecto 1 - Análisis de Datos": "https://github.com/usuario/proyecto1",
-    "📈 Proyecto 2 - Visualización": "https://github.com/usuario/proyecto2",
-    "🤖 Proyecto 3 - Machine Learning": "https://github.com/usuario/proyecto3",
+    "📊 Proyecto 1 - ": "",
+    "📈 Proyecto 2 - ": "2",
+    "🤖 Proyecto 3 - ": "",
 }
 
 # Mostrar proyectos en columnas tipo tarjetas
