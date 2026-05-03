@@ -4,20 +4,24 @@ from PIL import Image
 # Configuración de la página
 st.set_page_config(page_title="Mi Portafolio", layout="wide")
 
-# Estilos CSS para cards y títulos
+# Estilos CSS
 st.markdown(
     """
     <style>
     .titulo {
-        font-size: 48px;
+        font-size: 42px;
         font-weight: bold;
         color: #620462;
-        text-align: left;
+        margin-bottom: 5px;
     }
     .subtitulo {
-        font-size: 20px;
+        font-size: 18px;
         color: #555;
-        text-align: left;
+    }
+    .centered {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .card {
         background: linear-gradient(135deg, #fdfbfb 0%, #fcdefe 100%);
@@ -32,42 +36,30 @@ st.markdown(
         transform: translateY(-5px);
         box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
-    .card h3 {
-        color: #620462;
-        margin-bottom: 10px;
-    }
-    .card a {
-        text-decoration: none;
-        font-weight: bold;
-        color: #007BFF;
-    }
     </style>
     """,
     unsafe_allow_html=True
 )
 
-# Cargar imagen local
+# Cargar imagen
 image = Image.open("37 sin título.png")
 
-# 🔥 SECCIÓN HEADER (imagen + texto alineados)
-col1, col2 = st.columns([1, 4])
+# 🔥 CONTENEDOR CENTRADO
+col_main1, col_main2, col_main3 = st.columns([1, 2, 1])
 
-with col1:
-    st.image(image, width=120)
+with col_main2:
+    col1, col2 = st.columns([0.8, 2])  # menos espacio entre imagen y texto
 
-with col2:
-    st.markdown(
-        '<div class="titulo">Bienvenido a mi Portafolio</div>',
-        unsafe_allow_html=True
-    )
-    st.markdown(
-        '<div class="subtitulo">Aquí encontrarás mis proyectos y actividades</div>',
-        unsafe_allow_html=True
-    )
+    with col1:
+        st.image(image, width=110)
+
+    with col2:
+        st.markdown('<div class="titulo">Bienvenido a mi Portafolio</div>', unsafe_allow_html=True)
+        st.markdown('<div class="subtitulo">Aquí encontrarás mis proyectos y actividades</div>', unsafe_allow_html=True)
 
 st.write("---")
 
-# Lista de proyectos
+# Proyectos
 proyectos = {
     "🌟 Proyecto 1 - Clase 01": "https://intro-26-02-2026-mirprimerappeninterfaces10.streamlit.app/",
     "✨ Proyecto 2 - Control por voz inteligente": "https://ctrlvoice-controlxvoz-arp07.streamlit.app/",
@@ -91,7 +83,6 @@ proyectos = {
     "✨ Proyecto 20 - YOLO": "https://yolov5-pdstfhzmscsgf9ghwethfa.streamlit.app/",
 }
 
-# Mostrar proyectos en columnas tipo tarjetas
 cols = st.columns(3)
 for i, (nombre, link) in enumerate(proyectos.items()):
     with cols[i % 3]:
