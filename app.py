@@ -20,18 +20,41 @@ st.markdown(
     .titulo img {
         width: 80px;
         height: 80px;
+        border-radius: 10px;
     }
     .subtitulo {
         font-size: 24px;
         color: #555;
         text-align: center;
     }
+    .card {
+        background: linear-gradient(135deg, #fdfbfb 0%, #fcdefe 100%);
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        margin: 15px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        text-align: center;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    .card h3 {
+        color: #620462;
+        margin-bottom: 10px;
+    }
+    .card a {
+        text-decoration: none;
+        font-weight: bold;
+        color: #007BFF;
+    }
     </style>
     """,
     unsafe_allow_html=True
 )
 
-# 🔑 Aquí unificamos título + imagen en un solo bloque
+# 🔹 Título con imagen local al lado
 st.markdown(
     """
     <div class="titulo">
@@ -43,7 +66,6 @@ st.markdown(
 )
 
 st.markdown('<div class="subtitulo">Aquí encontrarás mis proyectos y actividades</div>', unsafe_allow_html=True)
-
 st.write("---")
 
 # Lista de proyectos
