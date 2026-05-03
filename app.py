@@ -55,13 +55,15 @@ st.markdown(
     """
     <div style="display:flex; align-items:center; justify-content:center; gap:15px;">
         <h1 style="color:#620462;">Bienvenido a mi Portafolio</h1>
+        
     </div>
     """,
     unsafe_allow_html=True
 )
-st.image(image, width=80)
-
 st.markdown('<div class="subtitulo">Aquí encontrarás mis proyectos y actividades</div>', unsafe_allow_html=True)
+st.image(image, width=100)
+
+
 
 st.write("---")
 
