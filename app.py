@@ -19,7 +19,7 @@ st.markdown(
         text-align: center;
     }
     .card {
-        background: linear-gradient(135deg, #f3defe 0%, #fcdefe 100%);
+        background: linear-gradient(135deg, #fdfbfb 0%, #fcdefe 100%);
         padding: 20px;
         border-radius: 15px;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
