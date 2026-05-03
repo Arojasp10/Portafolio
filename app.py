@@ -1,4 +1,5 @@
 import streamlit as st
+from PIL import Image
 
 # Configuración de la página
 st.set_page_config(page_title="Mi Portafolio", layout="wide")
@@ -48,9 +49,20 @@ st.markdown(
 # Encabezado
 st.markdown('<div class="titulo"> Bienvenido a mi Portafolio</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitulo">Aquí encontrarás mis proyectos y actividades</div>', unsafe_allow_html=True)
-image = Image.open('37 sin título.png')
-st.image(image, width=350)
 
+# Cargar imagen local
+image = Image.open("37 sin título.png")
+
+# Mostrar imagen junto al título
+st.markdown(
+    """
+    <div style="display:flex; align-items:center; justify-content:center; gap:15px;">
+        <h1 style="color:#620462;">Bienvenido a mi Portafolio</h1>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+st.image(image, width=80)
 
 st.write("---")
 
