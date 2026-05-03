@@ -48,6 +48,11 @@ st.markdown(
 # Encabezado
 st.markdown('<div class="titulo"> Bienvenido a mi Portafolio</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitulo">Aquí encontrarás mis proyectos y actividades</div>', unsafe_allow_html=True)
+try:
+    image = Image.open('37 sin título.png')
+    st.image(image, width=350)
+except Exception as e:
+    st.warning(f"No se pudo cargar la imagen: {e}")
 
 st.write("---")
 
